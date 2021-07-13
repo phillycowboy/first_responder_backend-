@@ -2,7 +2,7 @@ class HospitalsController < ApplicationController
 
     def index 
         hospitals = Hospital.all 
-        render json: hospitals, include [:patients]
+        render json: hospitals, include: [:patients]
     end
 
     def create 
@@ -13,6 +13,7 @@ class HospitalsController < ApplicationController
             render json: {
                 error: hospital.errors.full_messages
             }
+        end 
     end
 
     private 

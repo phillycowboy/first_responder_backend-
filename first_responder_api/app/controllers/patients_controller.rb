@@ -11,7 +11,7 @@ class PatientsController < ApplicationController
                 render json: patient
             else 
                 render json: {
-                patient.errors.full_messages
+                errror: patient.errors.full_messages
             }
         end 
 
