@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_170305) do
     t.string "heart_rate"
     t.string "blood_pressure"
     t.string "respiration_rate"
-    t.string "pulse"
     t.string "temperature"
     t.string "blood_glucose_level"
     t.string "end_tidal"
