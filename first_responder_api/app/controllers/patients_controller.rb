@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
     def create 
         patient = Patient.new(patient_params)
             if patient.save 
-                render json: patient
+                render json: patient, include: [:hospital]
             else 
                 render json: {
                 errror: patient.errors.full_messages
