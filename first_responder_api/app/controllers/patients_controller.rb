@@ -11,7 +11,20 @@ class PatientsController < ApplicationController
                 render json: patient, include: [:hospital]
             else 
                 render json: {
-                errror: patient.errors.full_messages
+                error: patient.errors.full_messages
+            }
+        end 
+
+    end
+
+    def destroy 
+        patient = Patient.find_by(id: params[:id])
+        if patient
+            patient.destroy
+            render json: patient 
+        else
+            render json: {
+                error: "Patient Could Not Be Deleted"
             }
         end 
 
