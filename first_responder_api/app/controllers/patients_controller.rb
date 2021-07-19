@@ -17,11 +17,23 @@ class PatientsController < ApplicationController
 
     end
 
-    def destroy 
+    def show 
         patient = Patient.find_by(id: params[:id])
         if patient
+            render json: patient
+        else 
+            render json: {
+                error: "Patient Not Found"
+            }
+        end
+    end
+
+    def destroy 
+        patient = Patient.find_by(id: params[:id])
+        binding.pry
+        if patient
             patient.destroy
-            render json: patient 
+            render json: patient
         else
             render json: {
                 error: "Patient Could Not Be Deleted"
