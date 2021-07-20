@@ -30,7 +30,7 @@ class PatientsController < ApplicationController
 
     def destroy 
         patient = Patient.find_by(id: params[:id])
-        binding.pry
+        # binding.pry
         if patient
             patient.destroy
             render json: patient
