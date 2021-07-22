@@ -15,6 +15,8 @@ class CreatePatients < ActiveRecord::Migration[6.1]
       t.string :chief_complaint
       t.string :on_scene_description
       t.belongs_to :hospital
+      t.string :arrival_time
+      t.string :date_of_arrival
       t.timestamps
     end
   end

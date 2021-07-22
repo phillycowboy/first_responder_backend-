@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_170305) do
     t.string "chief_complaint"
     t.string "on_scene_description"
     t.integer "hospital_id"
+    t.string "arrival_time"
+    t.string "date_of_arrival"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["hospital_id"], name: "index_patients_on_hospital_id"
